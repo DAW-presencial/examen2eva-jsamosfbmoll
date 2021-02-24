@@ -17,7 +17,7 @@ class CreateTutoresTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("empresa", 40);
-            $table->enum("tipo_doc", ["nif", "nie", "passport"]);
+            $table->enum("tipo_doc", ["nif", "nie", "pasaporte"]);
             $table->string("dni", 9);
             $table->string("nombre", 30);
             $table->string("primer_apellido", 30);
