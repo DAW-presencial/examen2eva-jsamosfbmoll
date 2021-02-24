@@ -18,5 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/tutor", [TutorController::class, "index"])->name("tutor");
-Route::post('/tutor', [TutorController::class, "store"]);
+Route::resource('/tutor', TutorController::class);
