@@ -13,7 +13,7 @@ class TutorController extends Controller
      */
     public function index()
     {
-        return view("tutor");
+        return "";
     }
 
     /**
@@ -23,7 +23,7 @@ class TutorController extends Controller
      */
     public function create()
     {
-        return "";
+        return view("tutor");
     }
 
     /**
