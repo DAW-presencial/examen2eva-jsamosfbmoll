@@ -12,68 +12,70 @@
     <div class="container">
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6">
+            <div class="col-6 mb-5">
                 <div class="mb-3 mt-5">
                     <h1>Añadir tutor</h1>
                 </div>
                 <form action="">
                     <label for="empresa" class="form-label">Empresa</label>
-                    <input type="text" id="empresa" name="empresa" class="form-control"/>
+                    <input type="text" id="empresa" name="empresa" class="form-control" value="{{ old('empresa') }}"/>
                     <div class="form-text mb-2">Nombre de la empresa asiganada</div>
 
                     <label for="tipo_doc" class="form-label">Tipo de documento</label>
                     <select class="form-select form-select-sm" id="tipo_doc" name="tipo_doc">
-                        <option selected>Tipo de documento</option>
-                        <option value="nif">NIF</option>
-                        <option value="nie">NIE</option>
-                        <option value="pasaporte">Pasaporte</option>
+                        <option {{ old("tipo_doc") != "" ? "" : "selected" }}>Tipo de documento</option>
+                        <option value="nif" {{ old("tipo_doc") == "nif" ? "selected" : "" }}>NIF</option>
+                        <option value="nie" {{ old("tipo_doc") == "nie" ? "selected" : "" }}>NIE</option>
+                        <option value="pasaporte" {{ old("tipo_doc") == "pasaporte" ? "selected" : "" }}>Pasaporte</option>
                     </select>
                     <div class="form-text mb-2">Tipo de documento de identidad</div>
 
-                    <label for="tipo_doc" class="form-label">Documento de identidad</label>
-                    <input type="text" id="tipo_doc" name="tipo_doc" class="form-control"/>
+                    <label for="dni" class="form-label">Documento de identidad</label>
+                    <input type="text" id="dni" name="dni" class="form-control" value="{{ old('dni') }}"/>
                     <div class="form-text mb-2">Tu documento de identidad</div>
 
                     <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control"/>
+                    <input type="text" id="nombre" name="nombre" class="form-control" value="{{ old('nombre') }}"/>
                     <div class="form-text mb-2">Nombre del tutor</div>
 
                     <label for="primer_apellido" class="form-label">Primer apellido</label>
-                    <input type="text" id="primer_apellido" name="primer_apellido" class="form-control"/>
+                    <input type="text" id="primer_apellido" name="primer_apellido" class="form-control" value="{{ old('primer_apellido') }}"/>
                     <div class="form-text mb-2">Primer apellido del tutor</div>
 
                     <label for="segundo_apellido" class="form-label">Segundo apellido</label>
-                    <input type="text" id="segundo_apellido" name="segundo_apellido" class="form-control"/>
+                    <input type="text" id="segundo_apellido" name="segundo_apellido" class="form-control" value="{{ old('segundo_apellido') }}"/>
                     <div class="form-text mb-2">Segundo apellido del tutor</div>
 
                     <label for="pais_dni" class="form-label">País DNI</label>
-                    <input type="text" id="pais_dni" name="pais_dni" class="form-control"/>
+                    <input type="text" id="pais_dni" name="pais_dni" class="form-control" value="{{ old('pais_dni') }}"/>
                     <div class="form-text mb-2">País del documento de identidad</div>
 
                     <label for="provincia" class="form-label">Província</label>
-                    <input type="text" id="provincia" name="provincia" class="form-control"/>
+                    <input type="text" id="provincia" name="provincia" class="form-control" value="{{ old('provincia') }}"/>
                     <div class="form-text mb-2">Província del tutor</div>
 
                     <label for="municipio" class="form-label">Municipio</label>
-                    <input type="text" id="municipio" name="municipio" class="form-control"/>
+                    <input type="text" id="municipio" name="municipio" class="form-control" value="{{ old('municipio') }}"/>
                     <div class="form-text mb-2">Municipio del tutor</div>
 
                     <label for="estado" class="form-label">Estado</label>
                     <select class="form-select form-select-sm" id="estado" name="estado">
-                        <option selected>Estado</option>
-                        <option value="activo">Activo</option>
-                        <option value="inactivo">Inactivo</option>
+                        <option {{ old("tipo_doc") != "" ? "" : "selected" }}>Estado</option>
+                        <option value="activo" {{ old("estado") == "activo" ? "selected" : "" }}>Activo</option>
+                        <option value="inactivo" {{ old("estado") == "inactivo" ? "selected" : "" }}>Inactivo</option>
                     </select>
                     <div class="form-text mb-2">Estado actual del tutor</div>
-                </form>
+                
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" class="form-control" value="{{ old('telefono') }}"/>
+                    <div class="form-text mb-2">Teléfono del tutor</div>
+                
+                    <label for="email" class="form-label">Mail</label>
+                    <input type="email" id="email" name="email" class="form-control" value="{{ old('email') }}"/>
+                    <div class="form-text mb-2">Correo electrónico del tutor</div>
 
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" id="telefono" name="telefono" class="form-control"/>
-                <div class="form-text mb-2">Teléfono del tutor</div>
-            
-                <label for="email" class="form-label">Mail</label>
-                <input type="email" id="email" name="email" class="form-control"/>
-                <div class="form-text mb-2">Correo electrónico del tutor</div>
+                    <button type="submit" class="btn btn-primary">Primary</button>
+                </form>
             </div>
             <div class="col-3"></div>
         </div>
