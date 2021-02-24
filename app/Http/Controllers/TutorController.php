@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TutorModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TutorController extends Controller
 {
@@ -50,6 +51,21 @@ class TutorController extends Controller
             "telefono" => $request->telefono,
             "email" => $request->email
         ]);
+
+        #DB::table('tutores')->insert([
+        #    "empresa" => $request->empresa,
+        #    "tipo_doc" => $request->tipo_doc,
+        #    "dni" => $request->dni,
+        #    "nombre" => $request->nombre,
+        #    "primer_apellido" => $request->primer_apellido,
+        #    "segundo_apellido" => $request->segundo_apellido,
+        #    "pais_dni" => $request->pais_dni,
+        #    "provincia" => $request->provincia,
+        #    "municipio" => $request->municipio,
+        #    "estado" => $request->estado,
+        #    "telefono" => $request->telefono,
+        #    "email" => $request->email
+        #]);
 
         return back();
     }
