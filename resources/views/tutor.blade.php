@@ -19,11 +19,12 @@
 
                 @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                        {{ $error }}
+                        <h2>Hay errores en el formulario</h2>
                     </div>
                 @endif
 
-                <form action="">
+                <form action="{{ route('tutor') }}" method="POST">
+                    @csrf
                     <label for="empresa" class="form-label">{{ __("empresa") }}</label>
                     <input required type="text" id="empresa" name="empresa" class="form-control" value="{{ old('empresa') }}"/>
                     <div class="form-text mb-2">{{ __("empresa") }}</div>
